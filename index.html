@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Code Maze Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-board" id="gameBoard"></div>
+
+  <div class="sidebar">
+    <h3>Code Blocks</h3>
+    <div class="block" draggable="true" data-command="forward">Move forward 🚗</div>
+    <div class="block" draggable="true" data-command="right">Turn right ↻</div>
+    <div class="block" draggable="true" data-command="left">Turn left ↺</div>
+    <div class="block" draggable="true" data-command="if-blue" data-nested="true">If square is blue 🔵</div>
+    <div class="block" draggable="true" data-command="if-green" data-nested="true">If square is green 🟢</div>
+    <div class="block" draggable="true" data-command="repeat-forever" data-nested="true">Repeat forever ♾️</div>
+    <div class="block" draggable="true" data-command="repeat-2" data-nested="true">Repeat 2 times 🔁</div>
+  </div>
+
+  <div class="program-section">
+    <h3>📜 Your Program</h3>
+    <div id="program" ondragover="event.preventDefault()" ondrop="addBlock(event)"></div>
+    <button id="runBtn">▶️ Run</button>
+    <button id="resetBtn">🔄 Reset</button>
+    <div>Total Score: <span id="score">200</span></div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
